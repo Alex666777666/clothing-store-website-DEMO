@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Clothing store website DEMO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ This project is a web application called 'Clothing Store Website DEMO', where users can navigate through the application, browse clothing, view specific items upon clicking on them, add preferred items to favorites, explore sellers and their stores by following links to Telegram or Instagram, and so on. The application is built using modern web technologies like: React, Redux, HTML, Sass and so on. 'DEMO Clothing Store Website' is an interactive web program that enables users to select products. As this application is still in development and hence referred to as DEMO, some functionality is currently unavailable, but this project is not stagnant and is being actively developed by the developer. It also has good potential to benefit both the seller and customers who appreciate its original design. Stay tuned for further application updates; we'll meet again soon!
 
-## Available Scripts
+## Technologies
+This project has been developed using the following technologies:
 
-In the project directory, you can run:
+React: The core library for building the user interface.
 
-### `npm start`
+React Router: Used for creating navigation between different pages of the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React Fragment: It's a tool in React that groups multiple elements without adding extra HTML. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React Component: For building blocks of UI in React apps.  
 
-### `npm test`
+useState: A React hook for managing component state.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+useEffect: Is versatile and allows to manage various side effects within functional components.
 
-### `npm run build`
+Redux: In essence, Redux serves as a powerful state management library that helps in maintaining a single source of truth for an application's state, simplifying state changes and aiding in better organization and debugging within complex applications.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+TypeScript: Aims to address some of the shortcomings of JavaScript, especially in terms of catching errors during development, improving code quality, and enhancing developer productivity in larger projects.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SCSS: Utilized for styling and designing the interface.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm: A utility for managing project packages and dependencies.
 
-### `npm run eject`
+## Project Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository to your computer:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash: `git clone https://github.com/Alex666777666/clothing-store-website-DEMO.git`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Navigate to the project folder:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash: `cd prod`
 
-## Learn More
+Install dependencies using npm:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash: `npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Launch the application on a local server:
 
-### Code Splitting
+bash: `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After completing these steps, open a web browser and go to http://localhost:3000 to see and interact with the "Clothing Store Website DEMO"
 
-### Analyzing the Bundle Size
+But if you want to see how the application looks without reviewing the code, you can easily do so by following this link: 
+https://658027661ade91259d46d982--helpful-tarsier-ef2811.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is developed by Alex666777666. You can reach out to me at aleksfnaf@gmail.com.
