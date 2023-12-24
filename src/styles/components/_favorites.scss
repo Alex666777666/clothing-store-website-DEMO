@@ -1,0 +1,19 @@
+.favorites {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.favorites__container {
+  display: block;
+}
+
+.favorites__body {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
