@@ -5,12 +5,13 @@ import { clothesProducts } from '../../logic/ProductsLogic/productsList.ts'
 import { useFavorites } from '../../hooks/useFavorites.js'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 import { useSelect } from '../../hooks/useSelect.js'
 
 const Clothes = () => {
-  const { favoriteColors, handleToFavorites } = useFavorites()
+  const { favoriteColors, handleToFavorites, handleRemoveFromFavorites } =
+    useFavorites()
   const { handleSelect } = useSelect()
 
   return (
@@ -22,12 +23,6 @@ const Clothes = () => {
           <div key={index}>
             <picture>
               <div className='image-wrapper'>
-                <span
-                  className={`link image-icon icons heart `}
-                  style={{ color: favoriteColors[product.id] || 'grey' }}
-                  onClick={() => handleToFavorites(product)}>
-                  <FontAwesomeIcon icon={faHeart} />
-                </span>
                 <Link
                   to={`/product/${product.id}`}
                   onClick={() => handleSelect(product)}>
@@ -71,6 +66,28 @@ const Clothes = () => {
                   )}
                 </div>
               </Link>
+              <div
+                className={`heart`}
+                style={{ color: favoriteColors[product.id] || 'grey' }}
+                onClick={() => {
+                  if (favoriteColors[product.id] === 'red') {
+                    handleRemoveFromFavorites(product)
+                  } else {
+                    handleToFavorites(product)
+                  }
+                }}>
+                {favoriteColors[product.id] === 'red' ? (
+                  <>
+                    Remove from favorites &nbsp;
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </>
+                ) : (
+                  <>
+                    Add to favorites &nbsp;
+                    <FontAwesomeIcon icon={faHeart} />
+                  </>
+                )}
+              </div>
             </picture>
           </div>
         ))}

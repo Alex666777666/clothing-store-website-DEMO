@@ -1,17 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { products } from './productsList.ts'
 import { useFavorites } from '../../hooks/useFavorites.js'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 import { useSelect } from '../../hooks/useSelect.js'
 
 const Products = () => {
-  const { favoriteColors, handleToFavorites } = useFavorites()
+  const { handleToFavorites, handleRemoveFromFavorites, favoriteColors } =
+    useFavorites()
   const { handleSelect } = useSelect()
+
+  const favoriteItems = useSelector(state => state.favorites.favoriteItems)
 
   return (
     <>
@@ -22,12 +26,6 @@ const Products = () => {
           <div key={index}>
             <picture>
               <div className={`image-wrapper`}>
-                <span
-                  className={`link image-icon icons heart `}
-                  style={{ color: favoriteColors[product.id] || 'grey' }}
-                  onClick={() => handleToFavorites(product)}>
-                  <FontAwesomeIcon icon={faHeart} />
-                </span>
                 <Link
                   to={`/product/${product.id}`}
                   onClick={() => handleSelect(product)}>
@@ -51,6 +49,7 @@ const Products = () => {
                   <div className='products__info new'>{product.new}</div>
                 </Link>
               </div>
+
               <Link
                 to={`/product/${product.id}`}
                 onClick={() => handleSelect(product)}>
@@ -71,6 +70,29 @@ const Products = () => {
                   )}
                 </div>
               </Link>
+
+              <div
+                className={`heart`}
+                style={{ color: favoriteColors[product.id] || 'grey' }}
+                onClick={() => {
+                  if (favoriteColors[product.id] === 'red') {
+                    handleRemoveFromFavorites(product)
+                  } else {
+                    handleToFavorites(product)
+                  }
+                }}>
+                {favoriteColors[product.id] === 'red' ? (
+                  <>
+                    Remove from favorites &nbsp;
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </>
+                ) : (
+                  <>
+                    Add to favorites &nbsp;
+                    <FontAwesomeIcon icon={faHeart} />
+                  </>
+                )}
+              </div>
             </picture>
           </div>
         ))}

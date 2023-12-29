@@ -98,6 +98,7 @@ a {
 
 .heart:hover {
   color: $red;
+  cursor: pointer;
 }
 
 .house:hover {
@@ -153,5 +154,6 @@ a {
   font-family: $pixelify;
   color: $blueviolet;
   padding-top: 120px;
-  padding-bottom: 200px;
+
+  padding-bottom: 390px;
 }

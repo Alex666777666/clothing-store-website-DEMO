@@ -63,7 +63,7 @@
   color: $black;
 }
 
-.add_container {
+.add_container-select {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -117,7 +117,7 @@
     align-items: center;
   }
 
-  .add_container {
+  .add_container-select {
     flex-direction: column;
   }
   .selected__cart {

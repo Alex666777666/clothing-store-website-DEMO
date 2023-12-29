@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faBan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 
 import { useSelect } from '../../hooks/useSelect'
 import { useFavorites } from '../../hooks/useFavorites'
 
 const Favorites = () => {
-  const { handleRemoveFromFavorites } = useFavorites()
+  const { handleRemoveFromFavorites, favoriteColors } = useFavorites()
   const { handleSelect } = useSelect()
 
   const favoriteItems = useSelector(state => state.favorites.favoriteItems)
@@ -31,11 +31,6 @@ const Favorites = () => {
               <div key={index}>
                 <picture>
                   <div className='image-wrapper'>
-                    <span
-                      className={`link image-icon icons heart `}
-                      onClick={() => handleRemoveFromFavorites(item)}>
-                      <FontAwesomeIcon icon={faBan} />
-                    </span>
                     <Link
                       to={`/product/${item.id}`}
                       onClick={() => handleSelect(item)}>
@@ -80,6 +75,13 @@ const Favorites = () => {
                       )}
                     </div>
                   </Link>
+                  <div
+                    className={` heart `}
+                    style={{ color: favoriteColors[item.id] || 'grey' }}
+                    onClick={() => handleRemoveFromFavorites(item)}>
+                    Remove from favorites &nbsp;
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </div>
                 </picture>
               </div>
             ))

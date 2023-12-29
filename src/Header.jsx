@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import logo from './dist/logo/logo.png'
@@ -14,7 +14,15 @@ import {
   faHouse,
 } from '@fortawesome/free-solid-svg-icons'
 
+import SearchBar from './logic/searchBar/SearchBar'
+
 const Header = () => {
+  const [searchVisible, setSearchVisible] = useState(false)
+
+  const toggleSearch = () => {
+    setSearchVisible(prevState => !prevState)
+  }
+
   return (
     <>
       <header className='header'>
@@ -43,9 +51,13 @@ const Header = () => {
               </li>
 
               <li>
-                <a href='' className='link inf icons glass'>
+                <a className='link inf icons glass' onClick={toggleSearch}>
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </a>
+                <SearchBar
+                  isVisible={searchVisible}
+                  toggleVisible={toggleSearch}
+                />
               </li>
               <li>
                 <a href='' className='link inf icons user'>
@@ -58,7 +70,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/shop' className='link inf icons cart'>
+                <Link to='/cart' className='link inf icons cart'>
                   <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
               </li>
@@ -81,18 +93,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/about-us' className='link inf'>
-                  About us
-                </Link>
-              </li>
-              <li>
                 <Link to='/delivery-payment-return' className='link inf'>
                   Delivery, payment, return
-                </Link>
-              </li>
-              <li>
-                <Link to='/work-in-company' className='link inf'>
-                  Work in the company
                 </Link>
               </li>
               <li>
@@ -107,11 +109,14 @@ const Header = () => {
                   &nbsp; +380 93 331 9890
                 </a>
               </li>
-
               <li>
-                <a href='' className='link inf icons glass'>
+                <a className='link inf icons glass' onClick={toggleSearch}>
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </a>
+                <SearchBar
+                  isVisible={searchVisible}
+                  toggleVisible={toggleSearch}
+                />
               </li>
               <li>
                 <a href='' className='link inf icons user'>
@@ -124,7 +129,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to='/shop' className='link inf icons cart'>
+                <Link to='/cart' className='link inf icons cart'>
                   <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
               </li>

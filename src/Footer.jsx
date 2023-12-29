@@ -80,25 +80,10 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/about-us' className='link inf footer__links'>
-                    About us
-                  </Link>
-                </li>
-                <li>
                   <Link
                     to='/delivery-payment-return'
                     className='link inf footer__links'>
                     Delivery, payment, return
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/cooperation' className='link inf footer__links'>
-                    Cooperation
-                  </Link>
-                </li>
-                <li>
-                  <Link to='/privacy-policy' className='link inf footer__links'>
-                    Privacy policy
                   </Link>
                 </li>
               </ul>

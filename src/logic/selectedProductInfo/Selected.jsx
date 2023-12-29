@@ -4,7 +4,11 @@ import { useSelector } from 'react-redux'
 import { useFavorites } from '../../hooks/useFavorites'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import {
+  faHeart,
+  faTrashCan,
+  faCartShopping,
+} from '@fortawesome/free-solid-svg-icons'
 
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -101,21 +105,21 @@ const Selected = () => {
                       <div className='info__product'>{item.care2}</div>
                       <div className='info__product'>{item.care3}</div>
                     </div>
-                    <div className='add_container'>
+                    <div className='add_container-select'>
                       <span
                         className={`selected__heart heart `}
                         style={{ color: favoriteColors[item.id] || 'grey' }}
                         onClick={() => {
-                          if (favoriteColors[item.id]) {
+                          if (favoriteColors[item.id] === 'red') {
                             handleRemoveFromFavorites(item)
                           } else {
                             handleToFavorites(item)
                           }
                         }}>
-                        {favoriteColors[item.id] ? (
+                        {favoriteColors[item.id] === 'red' ? (
                           <>
                             Remove from favorites &nbsp;
-                            <FontAwesomeIcon icon={faHeart} />
+                            <FontAwesomeIcon icon={faTrashCan} />
                           </>
                         ) : (
                           <>

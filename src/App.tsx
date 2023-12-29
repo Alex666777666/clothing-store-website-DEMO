@@ -6,17 +6,14 @@ import Page from './Page'
 import Home from './Home.tsx'
 import Favorites from './logic/addToFavorites/Favorites'
 import Selected from './logic/selectedProductInfo/Selected'
-import AboutUs from './components/AboutUs/AboutUs'
 import Accessories from './components/Accessories/Accessories'
+import Cart from './components/Cart/Cart'
 import Clothes from './components/Clothes/Clothes'
-import Cooperation from './components/Cooperation/Cooperation'
 import DeliveryEtc from './components/DeliveryEtc/DeliveryEtc'
 import Discounts from './components/Discounts/Discounts.tsx'
 import New from './components/New/New.tsx'
-import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 import Reviews from './components/Reviews/Reviews'
 import Shop from './components/Shop/Shop'
-import WorkInCo from './components/WorkInCo/WorkInCo'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
@@ -66,17 +63,14 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Page />}>
             <Route index element={<Home />} />
-            <Route path='/about-us' element={<AboutUs />} />
             <Route path='/accessories' element={<Accessories />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/clothes' element={<Clothes />} />
-            <Route path='/cooperation' element={<Cooperation />} />
             <Route path='/delivery-payment-return' element={<DeliveryEtc />} />
             <Route path='/discounts' element={<Discounts />} />
             <Route path='/new' element={<New />} />
-            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
             <Route path='/reviews' element={<Reviews />} />
             <Route path='/shop' element={<Shop />} />
-            <Route path='/work-in-company' element={<WorkInCo />} />
             <Route path='/favorites' element={<Favorites />} />
             <Route path='/product/:productId' element={<Selected />} />
           </Route>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PrivacyPolicy = () => {
+const Cart = () => {
   return (
     <>
       <p className='message'>Sorry, This Page isn't available right now 😓</p>
@@ -8,4 +8,4 @@ const PrivacyPolicy = () => {
   )
 }
 
-export default PrivacyPolicy
+export default Cart

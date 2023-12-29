@@ -11,7 +11,7 @@
   }
 
   50% {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   100% {
@@ -34,6 +34,25 @@
 }
 
 .blur-load > products__image {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.blur-load-search.loaded::before {
+  content: none;
+}
+
+.blur-load-search {
+  background-size: cover;
+  background-position: center;
+  border-radius: 10%;
+}
+
+.blur-load-search.loaded > products__image {
+  opacity: 1;
+}
+
+.blur-load-search > products__image {
   opacity: 0;
   transition: opacity 200ms ease-in-out;
 }

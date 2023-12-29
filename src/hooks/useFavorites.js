@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToFavorites } from '../logic/addToFavorites/favSlice'
 
 export const useFavorites = () => {
-  const [favoriteColors, setFavoriteColors] = useState({})
+  const [favoriteColors, setFavoriteColors] = useState(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem('favoriteProducts'))
+    return savedFavorites || {}
+  })
   const dispatch = useDispatch()
 
   const handleToFavorites = product => {
@@ -15,14 +18,13 @@ export const useFavorites = () => {
       } else {
         updatedColors[product.id] = 'grey'
       }
-
+      localStorage.setItem('favoriteProducts', JSON.stringify(updatedColors))
       return updatedColors
     })
   }
 
   const handleRemoveFromFavorites = product => {
     dispatch(addToFavorites(product))
-
     setFavoriteColors(prevColors => {
       const updatedColors = { ...prevColors }
       delete updatedColors[product.id]
@@ -31,16 +33,9 @@ export const useFavorites = () => {
     })
   }
 
-  useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem('favoriteProducts'))
-    if (savedFavorites) {
-      setFavoriteColors(savedFavorites)
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('favoriteProducts', JSON.stringify(favoriteColors))
-  }, [favoriteColors])
-
-  return { favoriteColors, handleToFavorites, handleRemoveFromFavorites }
+  return {
+    favoriteColors,
+    handleToFavorites,
+    handleRemoveFromFavorites,
+  }
 }

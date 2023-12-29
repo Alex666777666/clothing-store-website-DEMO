@@ -1,25 +1,23 @@
-import blurArmureScarf1 from '../../dist/products/accessories/scarfArmureExquise/blur/blurArmureScarf1.png'
-import blurArmureScarf2 from '../../dist/products/accessories/scarfArmureExquise/blur/blurArmureScarf2.png'
+import { v4 as uuidv4 } from 'uuid'
+
+import blurChainmailScarf1 from '../../dist/products/accessories/chainmailScarf/blur/blurChainmailScarf1.png'
 import blurKrioTShirt from '../../dist/products/shirts/krio/blur/blurKrioTShirt.png'
 import blurExiledTShirt1 from '../../dist/products/shirts/exiledKingdoms/blur/blurExiledTShirt1.png'
 import blurFallenTShirt1 from '../../dist/products/shirts/fallenCentury/blur/blurFallenTShirt1.png'
-import blurFreddyModel1 from '../../dist/products/shirts/freddyFazber/blur/blurFreddyModel1.png'
-import blurFreddyModel2 from '../../dist/products/shirts/freddyFazber/blur/blurFreddyModel2.png'
-import blurFreddyModel3 from '../../dist/products/shirts/freddyFazber/blur/blurFreddyModel3.png'
-import blurFreddyModel4 from '../../dist/products/shirts/freddyFazber/blur/blurFreddyModel4.png'
+import blurTeddyModel3 from '../../dist/products/shirts/obscureTeddy/blur/blurTeddyModel3.png'
 import blurTankTShirt1 from '../../dist/products/shirts/knightTankTop/blur/blurTankTShirt1.png'
 import blurCastleTShirt1 from '../../dist/products/shirts/whiteCastle/blur/blurCastleTShirt1.png'
 import blurKnightTShirt1 from '../../dist/products/shirts/whiteKnight/blur/blurKnightTShirt1.png'
 
-import armureScarf1 from '../../dist/products/accessories/scarfArmureExquise/armureScarf1.jpg'
-import armureScarf2 from '../../dist/products/accessories/scarfArmureExquise/armureScarf2.jpg'
+import chainmailScarf1 from '../../dist/products/accessories/chainmailScarf/chainmailScarf1.jpg'
+import chainmailScarf2 from '../../dist/products/accessories/chainmailScarf/chainmailScarf2.jpg'
 import krioTShirt from '../../dist/products/shirts/krio/krioTShirt.jpg'
 import exiledTShirt1 from '../../dist/products/shirts/exiledKingdoms/exiledTShirt1.jpg'
 import fallenTShirt1 from '../../dist/products/shirts/fallenCentury/fallenTShirt1.jpg'
-import freddyModel1 from '../../dist/products/shirts/freddyFazber/freddyModel1.png'
-import freddyModel2 from '../../dist/products/shirts/freddyFazber/freddyModel2.png'
-import freddyModel3 from '../../dist/products/shirts/freddyFazber/freddyModel3.png'
-import freddyModel4 from '../../dist/products/shirts/freddyFazber/freddyModel4.png'
+import teddyModel1 from '../../dist/products/shirts/obscureTeddy/teddyModel1.png'
+import teddyModel2 from '../../dist/products/shirts/obscureTeddy/teddyModel2.png'
+import teddyModel3 from '../../dist/products/shirts/obscureTeddy/teddyModel3.png'
+import teddyModel4 from '../../dist/products/shirts/obscureTeddy/teddyModel4.png'
 import tankTShirt1 from '../../dist/products/shirts/knightTankTop/tankTShirt1.jpg'
 import castleTShirt1 from '../../dist/products/shirts/whiteCastle/castleTShirt1.jpg'
 import knightTShirt1 from '../../dist/products/shirts/whiteKnight/knightTShirt1.jpg'
@@ -50,16 +48,16 @@ type Product = {
 
 const products: Product[] = [
   {
-    image: armureScarf1,
-    blurImage: blurArmureScarf1,
-    additionalImage1: armureScarf2,
+    image: chainmailScarf1,
+    blurImage: blurChainmailScarf1,
+    additionalImage1: chainmailScarf2,
     discounts: '',
     limited: 'limited',
     new: 'new',
-    name: 'Scarf Armure Exquise',
+    name: 'Chainmail scarf',
     size: '180x18',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'Acrylic 100%',
     DetailsAndCut: 'Two-sided scarf with brand logo tag sewn into the seam.',
     season: 'Demi-season',
@@ -79,7 +77,7 @@ const products: Product[] = [
     name: 'Krio',
     size: 'XS S M L XL XXL',
     price: 1000,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'Black polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
@@ -99,7 +97,7 @@ const products: Product[] = [
     name: 'Exiled Kingdoms',
     size: 'XS S M L XL XXL',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'White polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
@@ -119,7 +117,7 @@ const products: Product[] = [
     name: 'Fallen Century',
     size: 'XS S M L XL XXL',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'White polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
@@ -131,18 +129,18 @@ const products: Product[] = [
     accessories: false,
   },
   {
-    image: freddyModel3,
-    blurImage: blurFreddyModel3,
-    additionalImage1: freddyModel1,
-    additionalImage2: freddyModel2,
-    additionalImage3: freddyModel4,
-    id: Math.floor(Math.random() * 100),
-    discounts: '-10%',
+    image: teddyModel3,
+    blurImage: blurTeddyModel3,
+    additionalImage1: teddyModel1,
+    additionalImage2: teddyModel2,
+    additionalImage3: teddyModel4,
+    id: uuidv4(),
+    discounts: '',
     limited: '',
     new: '',
-    name: 'Freddy Fazber',
+    name: 'Obscure Teddy',
     size: 'XS S M L XL XXL',
-    price: 800,
+    price: 900,
 
     material: 'Black polyester',
     DetailsAndCut: 'Slightly oversized cut',
@@ -163,7 +161,7 @@ const products: Product[] = [
     name: 'Knight Tank Top',
     size: 'XS S M L XL XXL',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'White polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
@@ -184,7 +182,7 @@ const products: Product[] = [
     name: 'White Castle',
     size: 'XS S M L XL XXL',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'White polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
@@ -204,7 +202,7 @@ const products: Product[] = [
     name: 'White Knight',
     size: 'XS S M L XL XXL',
     price: 800,
-    id: Math.floor(Math.random() * 100),
+    id: uuidv4(),
     material: 'White polyester',
     DetailsAndCut: 'Slightly oversized cut',
     season: 'Year round',
