@@ -1,0 +1,55 @@
+//fonts
+$roboto-mono: 'Roboto Mono', monospace;
+$quicksand: 'Quicksand', sans-serif;
+
+$permanent: 'Permanent', cursive;
+$pixelify: 'Pixelify Sans', sans-serif;
+$creepster: 'Creepster', sans-serif;
+
+//colors
+$black: #000;
+$off-black: #343231;
+$dark-grey: #1e1e1e;
+$grey-classic: #808080;
+$grey: #d1baac;
+$white: #ffff;
+$off-white: #f8f8f8;
+$red: rgb(255, 0, 0);
+$error-text: #f44336;
+$orange: #ffa500;
+$gold: rgb(255, 200, 15);
+$yellow: #ffff00;
+$mint: rgb(34, 214, 199);
+$sky-blue: rgb(15, 174, 223);
+$telegram-color: rgb(0, 136, 204);
+$green: rgb(19, 187, 19);
+$success-text: #4caf50;
+$indigo: #4b0082;
+$purple: #800080;
+$darkorchid: #9932cc;
+$blueviolet: #8a2be2;
+
+$instagram-gradient: radial-gradient(
+  circle at 10% 10%,
+  #fdf497 0%,
+  #fdf497 5%,
+  #fd5949 45%,
+  #d6249f 60%,
+  #285aeb 80%
+);
+
+//scroll settings
+
+::-webkit-scrollbar {
+  background-color: $off-black;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $grey-classic;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: lighten($grey-classic, 10);
+}

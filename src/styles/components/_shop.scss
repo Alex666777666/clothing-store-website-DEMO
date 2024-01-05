@@ -1,0 +1,35 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  padding: 50px 50px;
+  color: $black;
+}
+
+.shop-message {
+  font-size: 150%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.shop-inf {
+  color: $mint;
+  font-family: $roboto-mono;
+
+  &:hover {
+    text-decoration: none;
+    color: $sky-blue;
+  }
+}
+
+.shop-house {
+  color: $black;
+  font-size: 150%;
+
+  &:hover {
+    color: $orange;
+  }
+}

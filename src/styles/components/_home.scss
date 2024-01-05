@@ -1,0 +1,157 @@
+.home {
+  &__container {
+    // background-color: rgba(0, 0, 0, 0.7);
+  }
+  &__body {
+  }
+}
+
+.carousel__container {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.carousel.carousel-slider .control-arrow {
+  background: $black;
+  color: $black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.2;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  opacity: 1;
+  background-color: $red;
+}
+
+.products__container {
+  border-radius: 1%;
+  margin: 20px auto 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.products__image {
+  object-fit: cover;
+  margin: 20px 0 30px 0;
+  border-radius: 10%;
+  display: block;
+  width: 340px;
+  height: 340px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.products__info {
+  color: $white;
+}
+
+.label {
+  color: $black;
+}
+
+.size {
+  color: $grey-classic;
+}
+
+.price {
+  font-family: $roboto-mono;
+  color: $green;
+}
+
+.limited {
+  display: flex;
+  justify-content: center;
+  background-color: $orange;
+  width: 100px;
+  text-transform: uppercase;
+  font-family: $pixelify;
+  border-radius: 1%;
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  font-size: 20px;
+  color: $white;
+  transform: translate(0, -50%);
+}
+
+.new {
+  display: flex;
+  justify-content: center;
+  background-color: $green;
+  width: 100px;
+  text-transform: uppercase;
+  font-family: $pixelify;
+  border-radius: 1%;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  font-size: 20px;
+  color: $white;
+  transform: translate(0, -50%);
+}
+
+.discounts {
+  background-color: $red;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 20px;
+  color: $white;
+  transform: translate(0, -50%);
+}
+
+.price-decrease {
+  text-decoration: line-through;
+  color: $red;
+}
+
+@media only screen and (max-width: 768px) {
+  .products__image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .image-icon {
+    top: 18%;
+
+    font-size: 15px;
+  }
+
+  .limited {
+    width: 65px;
+
+    top: 75%;
+
+    font-size: 15px;
+  }
+
+  .new {
+    width: 65px;
+
+    top: 75%;
+
+    font-size: 15px;
+  }
+
+  .discounts {
+    top: 20%;
+    left: 5%;
+    font-size: 15px;
+  }
+}
