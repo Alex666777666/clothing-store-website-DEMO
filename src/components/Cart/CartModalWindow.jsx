@@ -33,9 +33,8 @@ const CartModalWindow = ({ isVisible, toggleVisible, item }) => {
                   className={selectedSize === size ? "selected" : ""}
                   onClick={() => {
                     handleSelectSize(size);
-                    handleToCart({ ...item, selectedSize });
+                    handleToCart({ ...item, selectedSize: size });
                     toggleVisible();
-                    setSelectedSize(null);
                   }}
                 >
                   {size}
