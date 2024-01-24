@@ -46,7 +46,7 @@ bash: `npm start`
 After completing these steps, open a web browser and go to http://localhost:3000 to see and interact with the "Clothing Store Website DEMO"
 
 But if you want to see how the application looks without reviewing the code, you can easily do so by following this link: 
-https://armure-exquise.netlify.app/
+https://659850a46270e640a02752d2--armure-exquise.netlify.app/
 
 ## Author
 
