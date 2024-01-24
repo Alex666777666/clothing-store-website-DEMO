@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
-  faPhoneVolume,
   faUser,
   faMagnifyingGlass,
   faHeart,
@@ -24,11 +23,7 @@ const MobileHeader = () => {
   };
 
   const toggleSideBar = () => {
-    const lock = (document.body.style.overflow = "hidden");
-
     setSideBarVisible((prevState) => !prevState);
-
-    document.body.style.overflow = lock ? "auto" : "hidden";
   };
 
   return (

@@ -40,7 +40,7 @@ type Product = {
   limited: string;
   new: string;
   name: string;
-  size: string;
+  size: Array<string>;
   price: number;
   discountedPrice?: number;
   id: number;
@@ -67,7 +67,7 @@ const products: Product[] = [
     limited: "",
     new: "new",
     name: `Sticker pack '4knights'`,
-    size: "6x6cm",
+    size: ["6x6cm"],
     price: 100,
     id: uuidv4(),
     description: "4 different silver chromatic stickers",
@@ -86,7 +86,7 @@ const products: Product[] = [
     limited: "limited",
     new: "new",
     name: "Chainmail scarf",
-    size: "180x18",
+    size: ["180x18"],
     price: 800,
     id: uuidv4(),
     material: "Acrylic 100%",
@@ -106,7 +106,8 @@ const products: Product[] = [
     limited: "limited",
     new: "new",
     name: "Krio",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
+
     price: 1000,
     id: uuidv4(),
     material: "Black polyester",
@@ -126,7 +127,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "Exiled Kingdoms",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 800,
     id: uuidv4(),
     material: "White polyester",
@@ -146,7 +147,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "Fallen Century",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 800,
     id: uuidv4(),
     material: "White polyester",
@@ -170,7 +171,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "Obscure Teddy",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 900,
 
     material: "Black polyester",
@@ -190,7 +191,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "Knight Tank Top",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 800,
     id: uuidv4(),
     material: "White polyester",
@@ -211,7 +212,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "White Castle",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 800,
     id: uuidv4(),
     material: "White polyester",
@@ -231,7 +232,7 @@ const products: Product[] = [
     limited: "",
     new: "",
     name: "White Knight",
-    size: "XS S M L XL XXL",
+    size: ["XS", "S", "M", "L", "XL", "XXL"],
     price: 800,
     id: uuidv4(),
     material: "White polyester",

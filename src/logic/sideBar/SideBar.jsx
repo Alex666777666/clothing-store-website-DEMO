@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { motion } from "framer-motion";
+
 import {
   faPhoneVolume,
   faUser,
@@ -25,6 +27,12 @@ const SideBar = ({ isVisible, toggleVisible }) => {
       return !prevState;
     });
   };
+
+  if (isVisible) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
 
   return isVisible ? (
     <div className="overlay-sideBar">
@@ -93,97 +101,105 @@ const SideBar = ({ isVisible, toggleVisible }) => {
             </ul>
           </nav>
         </div>
-        <nav className="sideBar-menu">
-          <ul className="sideBar-info">
-            <li>
-              <Link
-                to="/discounts"
-                style={{ color: "red" }}
-                className="sideBar-link "
-                onClick={toggleVisible}
-              >
-                Discounts
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/new"
-                style={{ color: "lime" }}
-                className="sideBar-link "
-                onClick={toggleVisible}
-              >
-                New
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/clothes"
-                className="sideBar-link"
-                onClick={toggleVisible}
-              >
-                Clothes
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/accessories"
-                className="sideBar-link"
-                onClick={toggleVisible}
-              >
-                Accessories
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <nav className="sideBar-menu">
-          <ul className="sideBar-info">
-            <li>
-              <Link
-                to="/reviews"
-                className="sideBar-link inf"
-                onClick={toggleVisible}
-              >
-                Reviews
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/shop"
-                className="sideBar-link inf"
-                onClick={toggleVisible}
-              >
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/delivery-payment-return"
-                className="sideBar-link inf"
-                onClick={toggleVisible}
-              >
-                Delivery, payment, return
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="sideBar-chapter">Contact us:</div>
-        <div className="sideBar-chapter__line"></div>
-        <nav>
-          <ul>
-            <li>
-              <a href="tel:0965010275" className="sideBar-link inf ">
-                <FontAwesomeIcon icon={faPhoneVolume} />
-                &nbsp; +380 96 501 0275
-              </a>
-            </li>
-            <li>
-              <a href="tel:0933319890" className="sideBar-link inf ">
-                <FontAwesomeIcon icon={faPhoneVolume} />
-                &nbsp; +380 93 331 9890
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <motion.nav
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          style={{ overflow: "hidden" }}
+          transition={{ duration: 0.4 }}
+        >
+          <nav className="sideBar-menu">
+            <ul className="sideBar-info">
+              <li>
+                <Link
+                  to="/discounts"
+                  style={{ color: "red" }}
+                  className="sideBar-link "
+                  onClick={toggleVisible}
+                >
+                  Discounts
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/new"
+                  style={{ color: "lime" }}
+                  className="sideBar-link "
+                  onClick={toggleVisible}
+                >
+                  New
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/clothes"
+                  className="sideBar-link"
+                  onClick={toggleVisible}
+                >
+                  Clothes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/accessories"
+                  className="sideBar-link"
+                  onClick={toggleVisible}
+                >
+                  Accessories
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <nav className="sideBar-menu">
+            <ul className="sideBar-info">
+              <li>
+                <Link
+                  to="/reviews"
+                  className="sideBar-link inf"
+                  onClick={toggleVisible}
+                >
+                  Reviews
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/shop"
+                  className="sideBar-link inf"
+                  onClick={toggleVisible}
+                >
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/delivery-payment-return"
+                  className="sideBar-link inf"
+                  onClick={toggleVisible}
+                >
+                  Delivery, payment, return
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="sideBar-chapter">Contact us:</div>
+          <div className="sideBar-chapter__line"></div>
+          <nav>
+            <ul>
+              <li>
+                <a href="tel:0965010275" className="sideBar-link inf ">
+                  <FontAwesomeIcon icon={faPhoneVolume} />
+                  &nbsp; +380 96 501 0275
+                </a>
+              </li>
+              <li>
+                <a href="tel:0933319890" className="sideBar-link inf ">
+                  <FontAwesomeIcon icon={faPhoneVolume} />
+                  &nbsp; +380 93 331 9890
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </motion.nav>
       </div>
     </div>
   ) : null;

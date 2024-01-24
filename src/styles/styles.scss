@@ -1,20 +1,21 @@
 @import-normalize;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
 
-@import './base/base';
-@import './base/image-load';
-@import './base/settings';
+@import "./base/base";
+@import "./base/image-load";
+@import "./base/settings";
 
-@import './components/header';
-@import './components/main';
-@import './components/home';
-@import './components/footer';
-@import './components/favorites';
-@import './components/selected';
-@import './components/shop';
+@import "./components/cart";
+@import "./components/header";
+@import "./components/main";
+@import "./components/home";
+@import "./components/footer";
+@import "./components/favorites";
+@import "./components/selected";
+@import "./components/shop";

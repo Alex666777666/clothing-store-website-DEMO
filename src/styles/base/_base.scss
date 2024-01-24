@@ -49,10 +49,12 @@ a {
 .inf {
   color: $off-white;
   font-family: $roboto-mono;
+  transition: 0.5s;
 
   &:hover {
     text-decoration: none;
     color: $sky-blue;
+    transition: 0.5s;
   }
 }
 
@@ -90,23 +92,33 @@ a {
 
 .glass:hover {
   color: $gold;
+  transition: 0.5s;
 }
 
 .user:hover {
   color: $mint;
+  transition: 0.5s;
 }
 
 .heart:hover {
   color: $red;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .house:hover {
   color: $orange;
+  transition: 0.5s;
+}
+
+.cart {
+  transition: 0.5s;
 }
 
 .cart:hover {
+  transition: 0.5s;
   color: $green;
+  cursor: pointer;
 }
 
 .icons {
@@ -153,7 +165,14 @@ a {
   font-size: 150%;
   font-family: $pixelify;
   color: $blueviolet;
-  padding-top: 120px;
+  padding-bottom: 60px;
+}
 
-  padding-bottom: 390px;
+.message__container {
+  padding-top: 120px;
+  padding-bottom: 190px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }

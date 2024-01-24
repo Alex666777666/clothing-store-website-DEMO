@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 150px;
 
   background-color: $dark-grey;
   color: $white;
@@ -69,7 +69,7 @@
 
 @media only screen and (max-width: 768px) {
   .footer {
-    margin-top: 50px;
+    margin-top: 150px;
   }
 
   .footer__container {

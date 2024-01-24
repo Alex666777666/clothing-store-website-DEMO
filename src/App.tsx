@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { ToastContainer } from "react-toastify";
+
 import Page from "./Page";
 import Home from "./Home.tsx";
 import Favorites from "./logic/addToFavorites/Favorites";
@@ -84,6 +86,7 @@ const App = () => {
       >
         <FontAwesomeIcon icon={faChevronUp} />
       </motion.button>
+      <ToastContainer />
     </>
   );
 };

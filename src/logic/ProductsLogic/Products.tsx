@@ -1,61 +1,65 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { products } from './productsList.ts'
-import { useFavorites } from '../../hooks/useFavorites.js'
+import { products } from "./productsList.ts";
+import { useFavorites } from "../../hooks/useFavorites.js";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-import { useSelect } from '../../hooks/useSelect.js'
+import { useSelect } from "../../hooks/useSelect.js";
 
 const Products = () => {
   const { handleToFavorites, handleRemoveFromFavorites, favoriteColors } =
-    useFavorites()
-  const { handleSelect } = useSelect()
-
-  const favoriteItems = useSelector(state => state.favorites.favoriteItems)
+    useFavorites();
+  const { handleSelect } = useSelect();
 
   return (
     <>
-      <div className='chapter'>Our Products</div>
-      <div className='chapter__line'></div>
-      <div className='products__container'>
+      <div className="chapter">Our Products</div>
+      <div className="chapter__line"></div>
+      <div className="products__container">
         {products.map((product, index) => (
           <div key={index}>
             <picture>
               <div className={`image-wrapper`}>
                 <Link
                   to={`/product/${product.id}`}
-                  onClick={() => handleSelect(product)}>
+                  onClick={() => handleSelect(product)}
+                >
                   <div
-                    className='blur-load'
-                    style={{ backgroundImage: `url(${product.blurImage})` }}>
+                    className="blur-load"
+                    style={{ backgroundImage: `url(${product.blurImage})` }}
+                  >
                     <img
-                      className='products__image'
+                      className="products__image"
                       src={product.image}
-                      loading='lazy'
+                      loading="lazy"
                       alt={`Slide ${index + 1}`}
                     />
                   </div>
 
-                  <div className='products__info discounts'>
+                  <div className="products__info discounts">
                     {product.discounts}
                   </div>
-                  <div className='products__info limited'>
+                  <div className="products__info limited">
                     {product.limited}
                   </div>
-                  <div className='products__info new'>{product.new}</div>
+                  <div className="products__info new">{product.new}</div>
                 </Link>
               </div>
 
               <Link
                 to={`/product/${product.id}`}
-                onClick={() => handleSelect(product)}>
-                <div className='products__info label'>{product.name}</div>
-                <div className='products__info size'>{product.size}</div>
-                <div className='products__info price'>
+                onClick={() => handleSelect(product)}
+              >
+                <div className="products__info label">{product.name}</div>
+                <div className="products__info size">
+                  {Array.isArray(product.size)
+                    ? product.size.join(" ")
+                    : product.size}
+                </div>
+                <div className="products__info price">
                   {product.discounts ? (
                     <>
                       <span className={`products__info price-decrease`}>
@@ -73,15 +77,16 @@ const Products = () => {
 
               <div
                 className={`heart`}
-                style={{ color: favoriteColors[product.id] || 'grey' }}
+                style={{ color: favoriteColors[product.id] || "grey" }}
                 onClick={() => {
-                  if (favoriteColors[product.id] === 'red') {
-                    handleRemoveFromFavorites(product)
+                  if (favoriteColors[product.id] === "red") {
+                    handleRemoveFromFavorites(product);
                   } else {
-                    handleToFavorites(product)
+                    handleToFavorites(product);
                   }
-                }}>
-                {favoriteColors[product.id] === 'red' ? (
+                }}
+              >
+                {favoriteColors[product.id] === "red" ? (
                   <>
                     Remove from favorites &nbsp;
                     <FontAwesomeIcon icon={faTrashCan} />
@@ -98,7 +103,7 @@ const Products = () => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

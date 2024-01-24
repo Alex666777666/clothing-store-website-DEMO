@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 import { useFavorites } from "../../hooks/useFavorites";
@@ -13,11 +13,24 @@ import {
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import { useCart } from "../../hooks/useCart";
+
+import CartModalWindow from "../../components/Cart/CartModalWindow";
+
 const Selected = () => {
   const { favoriteColors, handleToFavorites, handleRemoveFromFavorites } =
     useFavorites();
 
   const selectedItem = useSelector((state) => state.selected.selectedItem);
+
+  const [cartVisible, setCartVisible] = useState(false);
+
+  const { handleToCart } = useCart();
+  const [selectedSize, setSelectedSize] = useState(null);
+
+  const toggleCart = () => {
+    setCartVisible((prevState) => !prevState);
+  };
 
   return (
     <div className="selected">
@@ -74,7 +87,9 @@ const Selected = () => {
                 </div>
                 <div className="selected__info">
                   <div className="products__info label">{item.name}</div>
-                  <div className="products__info size">{item.size}</div>
+                  <div className="products__info size">
+                    {Array.isArray(item.size) ? item.size.join(" ") : item.size}
+                  </div>
                   <div className="products__info price">
                     {item.discounts ? (
                       <>
@@ -157,10 +172,23 @@ const Selected = () => {
                         )}
                       </span>
 
-                      <span className="selected__cart cart">
+                      <span
+                        className="selected__cart cart"
+                        onClick={() => {
+                          item.size.length === 1
+                            ? handleToCart({ ...item }, setSelectedSize(null))
+                            : toggleCart(item);
+                        }}
+                      >
                         Add to cart &nbsp;
                         <FontAwesomeIcon icon={faCartShopping} />
                       </span>
+
+                      <CartModalWindow
+                        isVisible={cartVisible}
+                        toggleVisible={toggleCart}
+                        item={item}
+                      />
                     </div>
                   </div>
                 </div>
