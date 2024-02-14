@@ -57,9 +57,15 @@
   align-items: flex-start;
 }
 
-.removeAll {
-  margin-left: 50%;
+.btn-container {
+  display: flex;
   margin-top: 35px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.removeAll {
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -99,14 +105,24 @@
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
+.submit {
+  margin: 50px 0px 0px;
+}
+
 .cart-size-container {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   margin: auto;
-  cursor: pointer;
   font-size: 20px;
+}
+
+.cart-sizes-select {
+  display: flex;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .cart-add {
@@ -121,8 +137,100 @@
   transition: 0.5s;
 }
 
+.side-order-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.order-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.order-elements {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+.buyer-info-conteiner {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.buyer-info-el {
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.nova_poshta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.nova_poshta-logo {
+  width: 60px;
+  cursor: none;
+}
+
+.nova_poshta-el {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-top: 15px;
+}
+
+.payment-container {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.payment-el {
+  display: flex;
+  margin-top: 15px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.cart-input {
+  height: 30px;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.department {
+  width: 400px;
+}
+
+.invalid {
+  color: $red;
+}
+
 @media only screen and (max-width: 768px) {
-  .removeAll {
-    margin-left: 34%;
+  .order-container {
+    margin-top: 25px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .order-elements {
+    margin-top: 15px;
+  }
+
+  .department {
+    width: 100%;
   }
 }

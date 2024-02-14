@@ -45,7 +45,7 @@ const Selected = () => {
               <div key={index} className="selected__wrapper">
                 <div className="carouselSelect__container">
                   <Carousel
-                    showArrows={true}
+                    showArrows={false}
                     emulateTouch={true}
                     showStatus={false}
                     showThumbs={true}

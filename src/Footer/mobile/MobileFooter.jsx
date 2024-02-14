@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTelegram, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const MobileFooter = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       <div className="footer__container-mobile">
@@ -27,7 +29,7 @@ const MobileFooter = () => {
 
           <div className="years__container">
             <div className="underline"></div>
-            <div className="years">©2022-2023 Armure exquise</div>
+            <div className="years">©2022-{currentYear} Armure exquise</div>
           </div>
         </div>
       </div>

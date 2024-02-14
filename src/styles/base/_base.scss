@@ -146,7 +146,7 @@ a {
 }
 
 .chapter {
-  margin: 50px 0 0 50px;
+  margin: 70px 0 0 50px;
   color: $black;
   font-size: 30px;
 
@@ -175,4 +175,14 @@ a {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+@media only screen and (max-width: 768px) {
+  .scroll-button {
+    display: none;
+  }
 }

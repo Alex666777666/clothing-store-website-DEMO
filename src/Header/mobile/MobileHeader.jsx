@@ -14,6 +14,8 @@ import {
 import SearchBar from "../../logic/searchBar/SearchBar";
 import SideBar from "../../logic/sideBar/SideBar";
 
+import { scrollToTop } from "../../../src/logic/aditionalFunctions/scroll/scrollTo.js";
+
 const MobileHeader = () => {
   const [searchVisible, setSearchVisible] = useState(false);
   const [sideBarVisible, setSideBarVisible] = useState(false);
@@ -43,7 +45,7 @@ const MobileHeader = () => {
               />
             </li>
 
-            <li>
+            <li onClick={scrollToTop}>
               <Link to="/" className="link inf icons house">
                 <FontAwesomeIcon icon={faHouse} />
               </Link>
@@ -58,17 +60,17 @@ const MobileHeader = () => {
                 toggleVisible={toggleSearch}
               />
             </li>
-            <li>
+            <li onClick={scrollToTop}>
               <a href="" className="link inf icons user">
                 <FontAwesomeIcon icon={faUser} />
               </a>
             </li>
-            <li>
+            <li onClick={scrollToTop}>
               <Link to="/favorites" className="link inf icons heart">
                 <FontAwesomeIcon icon={faHeart} />
               </Link>
             </li>
-            <li>
+            <li onClick={scrollToTop}>
               <Link to="/cart" className="link inf icons cart">
                 <FontAwesomeIcon icon={faCartShopping} />
               </Link>

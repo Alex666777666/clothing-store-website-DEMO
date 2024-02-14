@@ -7,7 +7,11 @@ import { faTelegram, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import MobileFooter from "./mobile/MobileFooter";
 
+import { scrollToTop } from "../logic/aditionalFunctions/scroll/scrollTo.js";
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       <footer className="footer">
@@ -20,7 +24,7 @@ const Footer = () => {
             <nav className="footer__menu">
               <ul className="footer__list">
                 Catalogue
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
                     to="/discounts"
                     style={{ color: "red" }}
@@ -29,7 +33,7 @@ const Footer = () => {
                     Discounts
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link
                     to="/new"
                     style={{ color: "lime" }}
@@ -38,12 +42,12 @@ const Footer = () => {
                     New
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link to="/clothes" className="link inf footer__links">
                     Clothes
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link to="/accessories" className="link inf footer__links">
                     Accessories
                   </Link>
@@ -51,22 +55,14 @@ const Footer = () => {
               </ul>
               <ul className="footer__list">
                 Info
-                <li>
+                <li onClick={scrollToTop}>
                   <Link to="/reviews" className="link inf footer__links">
                     Reviews
                   </Link>
                 </li>
-                <li>
+                <li onClick={scrollToTop}>
                   <Link to="/shop" className="link inf footer__links">
                     Shop
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/delivery-payment-return"
-                    className="link inf footer__links"
-                  >
-                    Delivery, payment, return
                   </Link>
                 </li>
               </ul>
@@ -94,7 +90,7 @@ const Footer = () => {
             </nav>
             <div className="years__container">
               <div className="underline"></div>
-              <div className="years">©2022-2023 Armure exquise</div>
+              <div className="years">©2022-{currentYear} Armure exquise</div>
             </div>
           </div>
         </div>

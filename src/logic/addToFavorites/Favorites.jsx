@@ -10,6 +10,8 @@ import { faTrashCan, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { useSelect } from "../../hooks/useSelect";
 import { useFavorites } from "../../hooks/useFavorites";
 
+import { scrollToTop } from "../aditionalFunctions/scroll/scrollTo.js";
+
 const Favorites = () => {
   const { handleRemoveFromFavorites, favoriteColors } = useFavorites();
   const { handleSelect } = useSelect();
@@ -27,7 +29,7 @@ const Favorites = () => {
               <p className="message">
                 Oops... you need to add here some nice stuff 💜
               </p>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/" className="shop-house">
                   Back to home &nbsp;
                   <FontAwesomeIcon icon={faHouse} />

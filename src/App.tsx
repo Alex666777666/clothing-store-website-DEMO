@@ -11,7 +11,6 @@ import Selected from "./logic/selectedProductInfo/Selected";
 import Accessories from "./components/Accessories/Accessories";
 import Cart from "./components/Cart/Cart";
 import Clothes from "./components/Clothes/Clothes";
-import DeliveryEtc from "./components/DeliveryEtc/DeliveryEtc";
 import Discounts from "./components/Discounts/Discounts.tsx";
 import New from "./components/New/New.tsx";
 import Reviews from "./components/Reviews/Reviews";
@@ -19,6 +18,8 @@ import Shop from "./components/Shop/Shop";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+
+import { scrollToTop } from "../src/logic/aditionalFunctions/scroll/scrollTo.js";
 
 const App = () => {
   const [scroll, setScroll] = useState<boolean>(false);
@@ -35,13 +36,6 @@ const App = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   const blurDivs = document.querySelectorAll(".blur-load");
 
@@ -68,7 +62,6 @@ const App = () => {
             <Route path="/accessories" element={<Accessories />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/clothes" element={<Clothes />} />
-            <Route path="/delivery-payment-return" element={<DeliveryEtc />} />
             <Route path="/discounts" element={<Discounts />} />
             <Route path="/new" element={<New />} />
             <Route path="/reviews" element={<Reviews />} />

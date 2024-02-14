@@ -16,6 +16,8 @@ import {
 
 import SearchBar from "../../logic/searchBar/SearchBar";
 
+import { scrollToTop } from "../../../src/logic/aditionalFunctions/scroll/scrollTo.js";
+
 const SideBar = ({ isVisible, toggleVisible }) => {
   const [searchVisible, setSearchVisible] = useState(false);
 
@@ -51,7 +53,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                 </a>
               </li>
 
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/"
                   className="link inf icons house"
@@ -71,7 +73,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                 />
               </li>
 
-              <li>
+              <li onClick={scrollToTop}>
                 <a
                   href=""
                   className="link inf icons user"
@@ -80,7 +82,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   <FontAwesomeIcon icon={faUser} />
                 </a>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/favorites"
                   className="link inf icons heart"
@@ -89,7 +91,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   <FontAwesomeIcon icon={faHeart} />
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/cart"
                   className="link inf icons cart"
@@ -110,7 +112,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
         >
           <nav className="sideBar-menu">
             <ul className="sideBar-info">
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/discounts"
                   style={{ color: "red" }}
@@ -120,7 +122,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   Discounts
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop} style={{ marginTop: "10px" }}>
                 <Link
                   to="/new"
                   style={{ color: "lime" }}
@@ -130,7 +132,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   New
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop} style={{ marginTop: "10px" }}>
                 <Link
                   to="/clothes"
                   className="sideBar-link"
@@ -139,7 +141,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   Clothes
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop} style={{ marginTop: "10px" }}>
                 <Link
                   to="/accessories"
                   className="sideBar-link"
@@ -152,7 +154,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
           </nav>
           <nav className="sideBar-menu">
             <ul className="sideBar-info">
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/reviews"
                   className="sideBar-link inf"
@@ -161,22 +163,13 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   Reviews
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop} style={{ marginTop: "10px" }}>
                 <Link
                   to="/shop"
                   className="sideBar-link inf"
                   onClick={toggleVisible}
                 >
                   Shop
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/delivery-payment-return"
-                  className="sideBar-link inf"
-                  onClick={toggleVisible}
-                >
-                  Delivery, payment, return
                 </Link>
               </li>
             </ul>
@@ -191,7 +184,7 @@ const SideBar = ({ isVisible, toggleVisible }) => {
                   &nbsp; +380 96 501 0275
                 </a>
               </li>
-              <li>
+              <li style={{ marginTop: "10px" }}>
                 <a href="tel:0933319890" className="sideBar-link inf ">
                   <FontAwesomeIcon icon={faPhoneVolume} />
                   &nbsp; +380 93 331 9890

@@ -25,10 +25,10 @@ const CartModalWindow = ({ isVisible, toggleVisible, item }) => {
         <>
           <div className="cart-size-container">
             <h3>Choose your size:</h3>
-            <ul style={{ display: "flex" }}>
+            <ul className="cart-sizes-select">
               {item.size.map((size) => (
                 <li
-                  style={{ marginLeft: "5px" }}
+                  style={{ marginLeft: "15px" }}
                   key={size}
                   className={selectedSize === size ? "selected" : ""}
                   onClick={() => {

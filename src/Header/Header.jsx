@@ -14,6 +14,8 @@ import {
 import SearchBar from "../logic/searchBar/SearchBar";
 import MobileHeader from "./mobile/MobileHeader.jsx";
 
+import { scrollToTop } from "../logic/aditionalFunctions/scroll/scrollTo.js";
+
 const Header = () => {
   const [searchVisible, setSearchVisible] = useState(false);
 
@@ -31,21 +33,17 @@ const Header = () => {
           <div className="header__body"></div>
           <nav className="header__menu">
             <ul className="header__info">
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/reviews" className="link inf">
                   Reviews
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/shop" className="link inf">
                   Shop
                 </Link>
               </li>
-              <li>
-                <Link to="/delivery-payment-return" className="link inf">
-                  Delivery, payment, return
-                </Link>
-              </li>
+
               <li>
                 <a href="tel:0965010275" className="link inf ">
                   <FontAwesomeIcon icon={faPhoneVolume} />
@@ -67,17 +65,17 @@ const Header = () => {
                   toggleVisible={toggleSearch}
                 />
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <a href="" className="link inf icons user">
                   <FontAwesomeIcon icon={faUser} />
                 </a>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/favorites" className="link inf icons heart">
                   <FontAwesomeIcon icon={faHeart} />
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/cart" className="link inf icons cart">
                   <FontAwesomeIcon icon={faCartShopping} />
                 </Link>
@@ -86,12 +84,12 @@ const Header = () => {
           </nav>
           <nav className="header__menu">
             <ul className="header__list">
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/" className="header__logo">
                   <img style={{ width: "60px" }} src={logo} alt="logo" />
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link
                   to="/discounts"
                   style={{ color: "red" }}
@@ -100,17 +98,17 @@ const Header = () => {
                   Discounts
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/new" style={{ color: "lime" }} className="link ">
                   New
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/clothes" className="link ">
                   Clothes
                 </Link>
               </li>
-              <li>
+              <li onClick={scrollToTop}>
                 <Link to="/accessories" className="link ">
                   Accessories
                 </Link>
