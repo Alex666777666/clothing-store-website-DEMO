@@ -4,6 +4,7 @@ const initialState = {
   userData: {
     userInitials: "",
     userPhoneNumber: "",
+    userEmail: "",
     userArea: "",
     userCity: "",
     userDepartment: "",

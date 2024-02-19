@@ -25,6 +25,7 @@ import { setUserData } from "../../logic/addDataCustomerSelect/customerDataSelec
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { string } from "prop-types";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,8 @@ const Cart = () => {
   const [initials, setInitials] = useState("");
 
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [Email, setEmail] = useState("");
 
   const [areas, setAreas] = useState([]);
   const [selectedArea, setSelectedArea] = useState("");
@@ -152,6 +155,17 @@ const Cart = () => {
     });
   };
 
+  const invalidBuyerEmailToast = () => {
+    toast("📧please enter your Email", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+    });
+  };
+
   const validToast = () => {
     const url = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/66955/parrot.gif";
 
@@ -174,12 +188,15 @@ const Cart = () => {
   const handleSubmitPayment = () => {
     const wrongInitials = initials.length <= 0 || Number(initials);
     const wrongPhoneNumber = phoneNumber.length !== 13;
+    const wrongEmail = Email.length <= 0 || !/@gmail\.com$/.test(Email);
+
     if (
       !isValidDelivery(selectedArea) ||
       !isValidDelivery(selectedCity) ||
       !isValidDelivery(selectedDepartment) ||
       wrongInitials ||
-      wrongPhoneNumber
+      wrongPhoneNumber ||
+      wrongEmail
     ) {
       invalidDeliveryDataToast();
       setErrorState(true);
@@ -187,6 +204,8 @@ const Cart = () => {
         invalidBuyerNameToast();
       } else if (wrongPhoneNumber) {
         invalidBuyerPhoneToast();
+      } else if (wrongEmail) {
+        invalidBuyerEmailToast();
       }
     } else {
       setErrorState(false);
@@ -195,6 +214,7 @@ const Cart = () => {
         setUserData({
           userInitials: initials,
           userPhoneNumber: phoneNumber,
+          userEmail: Email,
           userArea: selectedArea,
           userCity: selectedCity,
           userDepartment: selectedDepartment,
@@ -332,6 +352,17 @@ const Cart = () => {
                       required
                       value={phoneNumber}
                       onChange={(phoneNumber) => setPhoneNumber(phoneNumber)}
+                    />
+                  </div>
+                  <div className="buyer-info-el">
+                    <label>Email:</label>
+                    <input
+                      className={`cart-input `}
+                      type="text"
+                      required
+                      placeholder="Enter your Email..."
+                      value={Email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
