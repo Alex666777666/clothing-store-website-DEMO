@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import emailjs from "@emailjs/browser";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,6 +23,8 @@ import {
 } from "../../../../logic/toasts/toasts.js";
 
 const OrderSection = ({ processingOrderRef }) => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
   const dispatch = useDispatch();
 
   const [initials, setInitials] = useState("");
@@ -81,6 +84,21 @@ const OrderSection = ({ processingOrderRef }) => {
 
     fetchDepartments();
   }, []);
+
+  const calculateTotal = () => {
+    let total = 0;
+
+    cartItems.forEach((item) => {
+      const itemPrice =
+        item.discountedPrice !== undefined ? item.discountedPrice : item.price;
+
+      const priceString = itemPrice.toString();
+
+      total += parseFloat(priceString);
+    });
+
+    return total;
+  };
 
   const isValidDelivery = (selectedValue) => {
     return (
@@ -356,9 +374,29 @@ const OrderSection = ({ processingOrderRef }) => {
           <FontAwesomeIcon icon={faDollarSign} />
         </button>
       </div>
-      <textarea style={{ display: "none" }} name="message">
-        Your order...
-      </textarea>
+      <textarea
+        style={{ display: "none" }}
+        name="message"
+        value={`Your products: ${
+          cartItems.length === 0
+            ? null
+            : cartItems
+                .map((item) => {
+                  if (item.name && item.selectedSize) {
+                    return `${item.name} (${item.selectedSize})`;
+                  } else if (item.name) {
+                    return item.name;
+                  }
+                  return null;
+                })
+                .filter(Boolean)
+                .join(", ")
+        }
+ \nYour total price is: ${calculateTotal()} грн
+
+\nDelivery address:
+         \nArea: ${selectedArea}\nCity: ${selectedCity}\nDepartment: ${selectedDepartment}`}
+      />
     </form>
   );
 };
