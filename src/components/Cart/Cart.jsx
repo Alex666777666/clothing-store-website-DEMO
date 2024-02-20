@@ -17,7 +17,7 @@ import {
 
 import { string } from "prop-types";
 
-import OrderSection from "../Cart/logic/sendToUserEmail&Delivery/OrderSection.jsx";
+import OrderSection from "./logic/sendToUserEmailAndDelivery/OrderSection.jsx";
 
 const Cart = () => {
   const { handleRemoveFromCart, handleRemoveAllFromCart } = useCart();
