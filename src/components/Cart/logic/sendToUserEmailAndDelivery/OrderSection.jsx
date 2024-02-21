@@ -114,6 +114,21 @@ const OrderSection = ({ processingOrderRef }) => {
     );
   };
 
+  const sendEmail = () => {
+    emailjs
+      .sendForm("service_jq4afpu", "template_bonms4s", form.current, {
+        publicKey: "rt30fw7zJ_hji0oGh",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
   const handleSubmitPayment = () => {
     const wrongInitials = initials.length <= 0 || Number(initials);
     const wrongPhoneNumber = phoneNumber.length !== 13;
@@ -138,7 +153,6 @@ const OrderSection = ({ processingOrderRef }) => {
       }
     } else {
       setErrorState(false);
-
       validToast();
       dispatch(
         setUserData({
@@ -150,24 +164,8 @@ const OrderSection = ({ processingOrderRef }) => {
           userDepartment: selectedDepartment,
         })
       );
+      sendEmail();
     }
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_jq4afpu", "template_bonms4s", form.current, {
-        publicKey: "rt30fw7zJ_hji0oGh",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
   };
 
   return (
@@ -366,7 +364,10 @@ const OrderSection = ({ processingOrderRef }) => {
         </div>
         <button
           className={`removeAll submit`}
-          onClick={handleSubmitPayment}
+          onClick={(e) => {
+            e.preventDefault();
+            handleSubmitPayment();
+          }}
           type="submit"
           value="Send"
         >
