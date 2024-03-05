@@ -107,26 +107,15 @@ const OrderSection = ({ processingOrderRef }) => {
         .filter((city) => city.AreaDescription === selectedArea)
         .some((value) => value.Description === selectedValue) ||
       departments
-        .filter(
-          (department) => department.SettlementDescription === selectedCity
-        )
+        .filter((department) => department.CityDescription === selectedCity)
         .some((value) => value.Description === selectedValue)
     );
   };
 
   const sendEmail = () => {
-    emailjs
-      .sendForm("service_jq4afpu", "template_bonms4s", form.current, {
-        publicKey: "rt30fw7zJ_hji0oGh",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+    emailjs.sendForm("service_jq4afpu", "template_bonms4s", form.current, {
+      publicKey: "rt30fw7zJ_hji0oGh",
+    });
   };
 
   const handleSubmitPayment = () => {
@@ -268,7 +257,7 @@ const OrderSection = ({ processingOrderRef }) => {
                       : ""
                   }`}
                   list="cities"
-                  value={selectedCity}
+                  value={selectedCity.replace(/\s\([^)]+\)/, "")}
                   required
                   onChange={(e) => setSelectedCity(e.target.value)}
                   placeholder={
@@ -302,10 +291,7 @@ const OrderSection = ({ processingOrderRef }) => {
                         }
                       })
                       .map((city) => (
-                        <option
-                          key={city.Ref}
-                          value={city.Description.replace(/\s\([^)]+\)/, "")}
-                        />
+                        <option key={city.Ref} value={city.Description} />
                       ))}
                 </datalist>
               </div>
@@ -334,7 +320,7 @@ const OrderSection = ({ processingOrderRef }) => {
                     departments
                       .filter(
                         (department) =>
-                          department.SettlementDescription === selectedCity
+                          department.CityDescription === selectedCity
                       )
                       .sort((a, b) => a.Number - b.Number)
                       .map((department) => (
